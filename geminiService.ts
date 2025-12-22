@@ -1,5 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
 import type { AgeGroup, ActivityType, Holiday } from './types';
+import { getUserApiKey } from './Settings';
 
 interface GeminiGenerateParams {
   prompt: string;
@@ -19,8 +20,15 @@ export const generateContent = async ({
   activityType,
   holiday,
 }: GeminiGenerateParams): Promise<AppGenerateResult> => {
-  // Always create a new instance to ensure the latest API key is used
-  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+  // Try to get user's API key from Settings first, fallback to environment variable
+  const userApiKey = getUserApiKey();
+  const apiKey = userApiKey || import.meta.env.VITE_GEMINI_API_KEY;
+  
+  if (!apiKey) {
+    throw new Error('Please configure your API key in Settings (click the gear icon)');
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
   
   let theme = prompt;
   if (holiday !== 'None') theme = `${holiday} themed ${theme}`.trim();
@@ -120,7 +128,6 @@ export const generateContent = async ({
 
   try {
     const imagePromise = (async () => {
-      // USING GEMINI 2.5 FLASH IMAGE (FREE TIER ELIGIBLE)
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash-image',
         contents: { parts: [{ text: masterPrompt }] },
@@ -135,7 +142,6 @@ export const generateContent = async ({
     })();
 
     const textPromise = (async () => {
-      // USING GEMINI 3 FLASH PREVIEW (FREE TIER ELIGIBLE)
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: `Audience: Age ${ageGroup}. Theme: ${theme}. Activity: ${activityType}.
