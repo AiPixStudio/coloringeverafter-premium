@@ -1,0 +1,30 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white font-sans text-gray-600 min-h-screen;
+    background-image: radial-gradient(#B2F7EF 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
+  }
+}
+
+.font-signature {
+  font-family: 'Allura', cursive;
+}
+
+.font-heading {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Glassmorphism effects */
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-xl;
+}
+
+/* Smooth transitions for every interactive element */
+* {
+  @apply transition-all duration-300;
+}
