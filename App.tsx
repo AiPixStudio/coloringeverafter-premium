@@ -4,6 +4,7 @@ import ControlsPanel from './ControlsPanel';
 import DisplayArea from './DisplayArea';
 import Gallery from './Gallery';
 import AccessGate from './AccessGate';
+import Settings from './Settings';
 import { generateContent } from './geminiService';
 import { AppStatus, GalleryItem, AgeGroup, ActivityType, Holiday } from './types';
 const App: React.FC = () => {
