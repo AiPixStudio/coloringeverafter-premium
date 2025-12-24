@@ -59,7 +59,7 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300">
-      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-8 animate-in zoom-in duration-300">
+      <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-4 sm:p-6 animate-in zoom-in duration-300">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold font-heading uppercase tracking-widest" style={{ color: '#FFC107' }}>
@@ -81,7 +81,7 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
           )}
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {isFirstTime && (
             <div className="border-2 rounded-xl p-4" style={{ backgroundColor: '#D4BFFF20', borderColor: '#D4BFFF' }}>
               <p className="text-sm leading-relaxed" style={{ color: '#485563' }}>
