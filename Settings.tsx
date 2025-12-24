@@ -50,7 +50,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
   };
 
   const handleClose = () => {
-    // Only allow closing if they have a saved key
     if (savedKey) {
       onClose();
     } else {
@@ -61,17 +60,15 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300">
       <div className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full p-8 animate-in zoom-in duration-300">
-        {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-bold font-heading uppercase tracking-widest" style={{ color: '#FFC107' }}>
               {isFirstTime ? '👋 Welcome!' : '⚙️ Settings'}
             </h2>
             {isFirstTime && (
-              <p className="text-sm text-gray-600 mt-1">Let's get you set up with your API key</p>
+              <p className="text-sm mt-1" style={{ color: '#6B7280' }}>Let's get you set up with your API key</p>
             )}
           </div>
-          {/* Only show X button if they already have a key saved */}
           {savedKey && (
             <button
               onClick={handleClose}
@@ -84,7 +81,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
           )}
         </div>
 
-        {/* Content */}
         <div className="space-y-6">
           {isFirstTime && (
             <div className="border-2 rounded-xl p-4" style={{ backgroundColor: '#D4BFFF20', borderColor: '#D4BFFF' }}>
@@ -95,7 +91,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
             </div>
           )}
 
-          {/* Status */}
           {savedKey && !isFirstTime && (
             <div className="border-2 rounded-xl p-4" style={{ backgroundColor: '#B2F7EF30', borderColor: '#B2F7EF' }}>
               <p className="text-sm font-bold flex items-center" style={{ color: '#485563' }}>
@@ -107,7 +102,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
             </div>
           )}
 
-          {/* API Key Input */}
           <div>
             <label className="block text-sm font-bold mb-2 uppercase tracking-wider" style={{ color: '#6B7280' }}>
               Your Google API Key {isFirstTime && <span className="text-red-500">*</span>}
@@ -136,7 +130,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
             </div>
           </div>
 
-          {/* Help Text */}
           <div className="border-l-4 p-4 rounded-r-xl" style={{ backgroundColor: '#B2F7EF20', borderColor: '#B2F7EF' }}>
             <p className="text-sm mb-2" style={{ color: '#485563' }}>
               <strong>How to get your FREE API key:</strong>
@@ -148,12 +141,11 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
               <li>Copy your key and paste it above</li>
               <li>Click "Save API Key" below</li>
             </ol>
-            <p className="text-xs mt-3 italic" style={{ color: '#6B7280' }}>
+            <p className="text-xs mt-2 italic" style={{ color: '#6B7280' }}>
               Your free API key gives you 1,500 pages per day - more than enough for any family!
             </p>
           </div>
 
-          {/* Need Help? */}
           {isFirstTime && (
             <div className="border-2 rounded-xl p-4 text-center" style={{ backgroundColor: '#D4BFFF10', borderColor: '#D4BFFF' }}>
               <p className="text-sm font-bold mb-2" style={{ color: '#485563' }}>
@@ -174,7 +166,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
             </div>
           )}
 
-          {/* Message */}
           {message && (
             <div className={`text-center py-2 px-4 rounded-xl font-bold text-sm ${
               message.includes('✅') 
@@ -185,7 +176,6 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
             </div>
           )}
 
-          {/* Buttons */}
           <div className="flex gap-3">
             <button
               onClick={handleSave}

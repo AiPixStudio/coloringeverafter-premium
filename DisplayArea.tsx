@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { AppStatus, GalleryItem } from './types';
+import { AppStatus, GalleryItem } from '../types';
 import { SpinnerIcon, DownloadIcon, ColorPaletteIcon, PrintIcon } from './IconComponents';
-import { downloadImage } from './fileUtils';
+import { downloadImage } from '../utils/fileUtils';
 
 interface DisplayAreaProps {
   status: AppStatus;

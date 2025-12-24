@@ -1,6 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
-import type { AgeGroup, ActivityType, Holiday } from './types';
-import { getUserApiKey } from './Settings';
+import type { AgeGroup, ActivityType, Holiday } from '../types';
+import { getUserApiKey } from '../Settings';
 
 interface GeminiGenerateParams {
   prompt: string;

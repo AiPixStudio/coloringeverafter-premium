@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { fileToBase64 } from './fileUtils';
+import { fileToBase64 } from '../utils/fileUtils';
 import { UploadIcon, TrashIcon } from './IconComponents';
 interface ImageUploaderProps {
   onImageUpload: (base64: string | null) => void;

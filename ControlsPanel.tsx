@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AgeGroup, ActivityType, Holiday } from './types';
-import { AGE_GROUPS, ACTIVITY_TYPES, HOLIDAYS } from './constants';
+import { AgeGroup, ActivityType, Holiday } from '../types';
+import { AGE_GROUPS, ACTIVITY_TYPES, HOLIDAYS } from '../constants';
 
 interface ControlsPanelProps {
   onGenerate: (prompt: string, ageGroup: AgeGroup, activityType: ActivityType, holiday: Holiday) => void;

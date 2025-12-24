@@ -3,8 +3,8 @@ import React from 'react';
 
 const Header: React.FC = () => {
   return (
-    <header className="relative w-full pt-6 pb-4 overflow-hidden">
-      <div className="container mx-auto px-4 text-center mt-6">
+    <header className="relative w-full pt-2 pb-1 overflow-hidden">
+      <div className="container mx-auto px-4 text-center mt-1">
         {/* Responsive font sizing using clamp and vw units to ensure it never breaks on small hardware */}
         <h1 className="font-signature text-[13vw] sm:text-7xl md:text-8xl lg:text-9xl text-[#FFC107] whitespace-nowrap drop-shadow-sm select-none leading-none">
           Coloring Ever After

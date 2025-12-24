@@ -1,7 +1,7 @@
 import React from 'react';
-import { GalleryItem } from './types';
+import { GalleryItem } from '../types';
 import { DownloadIcon, TrashIcon } from './IconComponents';
-import { downloadImage } from './fileUtils';
+import { downloadImage } from '../utils/fileUtils';
 interface GalleryProps {
   items: GalleryItem[];
   onSelectItem: (item: GalleryItem) => void;
