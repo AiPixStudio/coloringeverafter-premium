@@ -163,7 +163,7 @@ const Settings: React.FC<SettingsProps> = ({ onClose }) => {
                 Book a quick 15-minute call and I'll walk you through it step-by-step!
               </p>
               
-                href="https://api.leadconnectorhq.com/widget/booking/yrrKfoRefwg94H2ErApt"
+              <a href="https://api.leadconnectorhq.com/widget/booking/yrrKfoRefwg94H2ErApt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-2 text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all uppercase tracking-wider text-xs"
